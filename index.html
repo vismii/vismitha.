@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1 style="text-align:center; margin-top: 30px;"></h1>
+         <div class="container">
+        <img src="assets/mit-logo.png",alt="Avatar">
+         <img align="right" src="C:\Users\Vis mitha\Desktop\Santhu (5)\Santhu\assets\WhatsApp Image 2024-10-26 at 14.04.29_d44abec4.jpg",alt="Avatar">
+        <h1>MAHARAJA INSTITUTE OF TECHNOLOGY THANDAVAPURA</h1>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="column">
+            <img src="C:\Users\Vis mitha\Desktop\Santhu (5)\Santhu\assets\IMG_5339.png" alt="Image 1">
+              <h1>Y.R Somashekar</h1>
+            <a href="./assets/YR SOMASHEKAR.pdf">Resume</a>
+            <a href="./YR SOMASHEKAR.html">Bio Data</a>
+            <a href="C:\Users\Rakshitha B C\Downloads\Santhu\Santhu\assets\YR SOMASHEKAR.pdf"class="download-btn" download>Download Resume</a>
+        </div>
+        <div class="column">
+            <img src="C:\Users\Vis mitha\Desktop\Santhu (5)\Santhu\assets\IMG_20241025_073146.jpg"alt="Image 2">
+             <h1>Rakshitha BC</h1>
+            <a href="./assets/Rakshitha.pdf">Resume</a>
+            <a href="./Rakshitha.html">Bio Data</a>
+            <a href="C:\Users\Rakshitha B C\Downloads\Santhu\Santhu\assets\Rakshitha.pdf"class="download-btn" download>Download Resume</a>
+        </div>
+        <div class="column">
+            <img src="C:\Users\Vis mitha\Desktop\Santhu (5)\Santhu\assets\vismitha.jpg" alt="Image 3">
+              <h1>Vismitha H.N</h1>
+            <a href="./assets/Vismitha.pdf">Resume</a>
+            <a href="./Vismitha.html">Bio Data</a>
+            <a href="C:\Users\Rakshitha B C\Downloads\Santhu\Santhu\assets\Vismitha.pdf"class="download-btn" download>Download Resume</a>
+        </div>
+    </div>
+</script>
+</div>
+
+
+
+ <button class="download-btn" onclick="downloadAsPDF()" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color:white;
+        font-size: 24px;
+        color: black;
+        border: none;
+        cursor: pointer;">
+    ⬇️
+</button>
+
+
+<script>
+    // Ensure the function is properly defined and accessible
+    function downloadAsPDF() {
+        const element = document.body; // Select the entire page content
+
+        // Configure PDF options
+        const options = {
+            margin: 10,
+            filename: 'webpage-content.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Convert the content to PDF and trigger download
+        html2pdf().from(element).set(options).save();
+    }
+</script>
+
+   
+</body>
+</html>
+

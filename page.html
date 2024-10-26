@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image with Arrow Link</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('"C:\Users\Vis mitha\Desktop\Santhu (5)\Santhu\assets\pge.jpg"'); /* Path to your background image */
+      background-size: cover; /* Cover the entire viewport */
+      background-position: center; /* Center the background image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white; /* Change text color if necessary */
+    }
+
+    .image-container {
+      position: relative;
+      text-align: center; /* Center the text */
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px; /* Optional: rounded corners for the image */
+    }
+
+    .arrow-link {
+      position: absolute;
+      bottom: 10%;
+      right: 5%;
+      text-decoration: none;
+      font-size: 40px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    .arrow-link:hover {
+      transform: scale(1.2);images:click here
+    }
+  
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img src="C:\Users\Vis mitha\Desktop\Santhu (5)\Santhu\assets\pge.jpg" alt="Sample Image">
+    <a href="index.html" class="arrow-link">&#10145;</a> <!-- Unicode for Right Arrow -->
+  </div>
+
+</body>
+</html>

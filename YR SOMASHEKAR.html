@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y.R Somashekar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.table-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid hsl(0, 9%, 91%);
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: #3498db;
+    color: black;
+    font-weight: bold;
+    width: 25%;
+    text-align: right;
+}
+
+.styled-table td {
+    background-color: #f7f7f7;
+}
+
+.styled-table tbody tr {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.styled-table tbody tr:hover {
+    background-color: black;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+.styled-table tbody tr td:hover {
+    background-color: #d1ecf1;
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .styled-table th, .styled-table td {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .styled-table th, .styled-table td {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+}
+.pop-button {
+      padding: 15px 30px;
+      background-color: #03a9f4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.1s ease;
+    }
+
+    .pop-button:active {
+      transform: scale(1.1);
+    }
+
+    /* Hidden buttons for information */
+    .info-buttons {
+      display: none; /* Hidden by default */
+      margin-top: 10px;
+    }
+
+    /* Style for Address, Phone, and Email buttons */
+    .info-button {
+      background-color: #f50057;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .info-button:hover {
+      background-color: #c51162;
+    }
+ 
+        
+    
+
+
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <td>Y.R Somashekar</td>
+            </tr>
+            <tr>
+                <th>Father's Name</th>
+                <td>Ramu yk</td>
+            </tr>
+            <tr>
+                <th>Mother's Name</th>
+                <td>Rajeshwari yn</td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td>30/08/2004</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>Male</td>
+            </tr>
+            <tr>
+                <th>Blood group</th>
+                <td>B -ve</td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>Indian</td>
+            </tr>
+            
+            <tr>
+                <th>Languages known</th>
+                <td>English,kannada,Hindi,telugu</td>
+            </tr>
+        </tbody>
+    </table>
+        
+    <button class="pop-button" onclick="showInfo()">Know More</button>
+
+    <!-- Hidden Info Buttons -->
+    <div class="info-buttons" id="infoButtons">
+      <button class="info-button" onclick="showAddress()">Address</button>
+      <button class="info-button" onclick="showPhone()">Phone</button>
+      <button class="info-button" onclick="showEmail()">Email</button>
+    </div>
+  
+    <script>
+      // Function to display the info buttons
+      function showInfo() {
+        const infoButtons = document.getElementById('infoButtons');
+        infoButtons.style.display = 'block';
+      }
+  
+      // Functions to display alert messages when info buttons are clicked
+      function showAddress() {
+        alert('Address: Mysuru');
+      }
+  
+      function showPhone() {
+        alert('Phone: 7483976818');
+      }
+  
+      function showEmail() {
+        alert('Email: santhuyrgowda@gmail.com');
+      }
+      
+    </script>
+</div>
+
+
+
+ <button class="download-btn" onclick="downloadAsPDF()" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color:white;
+        font-size: 24px;
+        color: white;
+        border: none;
+        cursor: pointer;">
+    ⬇️
+</button>
+
+
+<script>
+    // Ensure the function is properly defined and accessible
+    function downloadAsPDF() {
+        const element = document.body; // Select the entire page content
+
+        // Configure PDF options
+        const options = {
+            margin: 10,
+            filename: 'webpage-content.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Convert the content to PDF and trigger download
+        html2pdf().from(element).set(options).save();
+    }
+</script>
+
+
+</body>
+</html>
